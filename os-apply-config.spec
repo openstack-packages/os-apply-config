@@ -1,11 +1,13 @@
 Name:		os-apply-config
 Version:	0.1.12
-Release:	4%{?dist}
+Release:	5%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
 URL:		http://pypi.python.org/pypi/%{name}
 Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
+
+Patch0001: 0001-Remove-pbr-runtime-dependency-and-replace-with-build.patch
 
 BuildArch:	noarch
 BuildRequires:	python2-devel
@@ -45,6 +47,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Mon Feb 24 2014 Steven Dake <sdake@redhat.com> - 0.1.12-5
+- Add patch file to spec missing in -4
+
 * Mon Feb 24 2014 Steven Dake <sdake@redhat.com> - 0.1.12-4
 - Add sed logic for python-pbr requires
 
