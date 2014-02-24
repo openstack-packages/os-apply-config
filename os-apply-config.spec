@@ -1,6 +1,6 @@
 Name:		os-apply-config
 Version:	0.1.12
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
@@ -15,6 +15,7 @@ BuildRequires:	python-pbr
 Requires:	python-setuptools
 Requires:	python-argparse
 Requires:	python-anyjson
+Requires:	pystache
 
 %description
 Tool to apply openstack heat metadata to files on the system.
@@ -37,6 +38,10 @@ Tool to apply openstack heat metadata to files on the system.
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Mon Feb 24 2014 Steven Dake <sdake@redhat.com> - 0.1.12-3
+- Override python-pbr rquires by manually sedding the release and version
+- Add pystache requires from bodhi testing
+
 * Fri Feb 21 2014 Steven Dake <sdake@redhat.com> - 0.1.12-2
 - Add python-pbr buildrequires
 
