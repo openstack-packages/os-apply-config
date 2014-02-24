@@ -1,6 +1,6 @@
 Name:		os-apply-config
 Version:	0.1.12
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
@@ -24,6 +24,13 @@ Tool to apply openstack heat metadata to files on the system.
 
 %setup -q -n %{name}-%{version}
 
+%patch0001 -p1
+
+sed -i '/setuptools_git/d' setup.py
+sed -i s/REDHATOSAPPLYCONFIGVERSION/%{version}/ os_apply_config/version.py
+sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
+
+
 %build
 %{__python} setup.py build
 
@@ -38,6 +45,9 @@ Tool to apply openstack heat metadata to files on the system.
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Mon Feb 24 2014 Steven Dake <sdake@redhat.com> - 0.1.12-4
+- Add sed logic for python-pbr requires
+
 * Mon Feb 24 2014 Steven Dake <sdake@redhat.com> - 0.1.12-3
 - Override python-pbr rquires by manually sedding the release and version
 - Add pystache requires from bodhi testing
