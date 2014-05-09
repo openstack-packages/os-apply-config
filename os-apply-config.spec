@@ -1,6 +1,6 @@
 Name:		os-apply-config
-Version:	0.1.12
-Release:	5%{?dist}
+Version:	0.1.16
+Release:	1%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
@@ -47,6 +47,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Fri May 9 2014 Ben Nemec <bnemec@redhat.com> - 0.1.16-1
+- Update to version 0.1.16
+
 * Mon Feb 24 2014 Steven Dake <sdake@redhat.com> - 0.1.12-5
 - Add patch file to spec missing in -4
 
