@@ -1,6 +1,6 @@
 Name:		os-apply-config
 Version:	0.1.16
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
@@ -47,6 +47,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.1.16-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
 * Fri May 9 2014 Ben Nemec <bnemec@redhat.com> - 0.1.16-1
 - Update to version 0.1.16
 
