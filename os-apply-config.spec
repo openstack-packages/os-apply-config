@@ -51,6 +51,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Thu Sep 11 2014 James Slagle <jslagle@redhat.com> - 0.1.16-1
+- Switch to rdopkg
+
 * Fri May 9 2014 Ben Nemec <bnemec@redhat.com> - 0.1.16-1
 - Update to version 0.1.16
 
