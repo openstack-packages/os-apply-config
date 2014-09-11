@@ -7,6 +7,8 @@ License:	ASL 2.0
 URL:		http://pypi.python.org/pypi/%{name}
 Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
+Patch0001: 0001-Remove-pbr-runtime-dependency-and-replace-with-build.patch
+
 BuildArch:	noarch
 BuildRequires:	python2-devel
 BuildRequires:	python-setuptools
@@ -28,6 +30,7 @@ Tool to apply openstack heat metadata to files on the system.
 
 %setup -q -n %{name}-%{version}
 
+%patch0001 -p1
 
 sed -i '/setuptools_git/d' setup.py
 sed -i s/REDHATOSAPPLYCONFIGVERSION/%{version}/ os_apply_config/version.py
