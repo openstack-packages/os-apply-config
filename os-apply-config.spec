@@ -1,6 +1,6 @@
 Name:		os-apply-config
 Version:	0.1.16
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
@@ -21,6 +21,10 @@ Requires:	pystache
 
 %description
 Tool to apply openstack heat metadata to files on the system.
+
+#
+# patches_base: 0.1.16
+#
 
 %prep
 
@@ -47,6 +51,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Thu Sep 11 2014 James Slagle <jslagle@redhat.com> - 0.1.16-3
+- Switch to rdopkg
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.1.16-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
