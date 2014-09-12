@@ -1,6 +1,6 @@
 Name:		os-apply-config
-Version:	0.1.16
-Release:	3%{?dist}
+Version:	0.1.21
+Release:	1%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
@@ -51,6 +51,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Fri Sep 12 2014 James Slagle <jslagle@redhat.com> 0.1.21-1
+- Update to upstream 0.1.21
+
 * Thu Sep 11 2014 James Slagle <jslagle@redhat.com> - 0.1.16-3
 - Switch to rdopkg
 

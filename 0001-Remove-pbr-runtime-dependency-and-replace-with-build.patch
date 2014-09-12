@@ -1,4 +1,4 @@
-From 74fb526072360228fd2d872c15348e2b09164753 Mon Sep 17 00:00:00 2001
+From eab520053374fac4d277e774fd3d50fa73708d1d Mon Sep 17 00:00:00 2001
 From: Steven Dake <sdake@redhat.com>
 Date: Mon, 24 Feb 2014 10:12:02 -0700
 Subject: [PATCH] Remove pbr runtime dependency and replace with build time
