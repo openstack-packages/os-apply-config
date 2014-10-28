@@ -1,5 +1,5 @@
 Name:		os-apply-config
-Version:	0.1.21
+Version:	0.1.23
 Release:	1%{?dist}
 Summary:	Configure files from cloud metadata
 
@@ -51,6 +51,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Tue Oct 28 2014 James Slagle <jslagle@redhat.com> 0.1.23-1
+- Update to upstream 0.1.23
+
 * Fri Sep 12 2014 James Slagle <jslagle@redhat.com> 0.1.21-1
 - Update to upstream 0.1.21
 
