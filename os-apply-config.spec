@@ -1,6 +1,6 @@
 Name:		os-apply-config
 Version:	0.1.30
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
@@ -49,6 +49,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python_sitelib}/os_apply_config*
 
 %changelog
+* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.1.30-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Mon May 11 2015 Mike Burns <mburns@redhat.com> 0.1.30-2
 - RHOS: use internal gerrit
 
