@@ -43,6 +43,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %install
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 
+# Delete tests
+rm -fr %{buildroot}%{python_sitelib}/os_apply_config/tests
+
 %files
 %doc README.rst
 %doc LICENSE
