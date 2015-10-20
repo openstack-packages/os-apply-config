@@ -47,7 +47,7 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python2_sitelib}/os_apply_config*
 
 %changelog
-* Tue Oct 20 2014 James Slagle <jslagle@redhat.com> 0.1.32-1
+* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.32-1
 - Update to upstream 0.1.32
 
 * Tue Oct 28 2014 James Slagle <jslagle@redhat.com> 0.1.23-1
