@@ -1,15 +1,13 @@
 Name:		os-apply-config
-Version:	0.1.30
-Release:	3%{?dist}
+Version:	0.1.32
+Release:	1%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
 URL:		http://pypi.python.org/pypi/%{name}
 Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
-#
-# patches_base=+1
-#
+Patch0001: 0001-Remove-pbr-runtime-dependency-and-replace-with-build.patch
 
 BuildArch:	noarch
 BuildRequires:	python2-devel
@@ -24,11 +22,11 @@ Requires:	pystache
 %description
 Tool to apply openstack heat metadata to files on the system.
 
-
 %prep
 
 %setup -q -n %{name}-%{version}
 
+%patch0001 -p1
 
 sed -i '/setuptools_git/d' setup.py
 sed -i s/REDHATOSAPPLYCONFIGVERSION/%{version}/ os_apply_config/version.py
@@ -36,27 +34,21 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 
 
 %build
-%{__python} setup.py build
+%{__python2} setup.py build
 
 %install
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
 
 %files
 %doc README.rst
 %doc LICENSE
 %{_bindir}/os-apply-config
 %{_bindir}/os-config-applier
-%{python_sitelib}/os_apply_config*
+%{python2_sitelib}/os_apply_config*
 
 %changelog
-* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.1.30-3
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Mon May 11 2015 Mike Burns <mburns@redhat.com> 0.1.30-2
-- RHOS: use internal gerrit
-
-* Thu May 07 2015 Mike Burns <mburns@redhat.com> 0.1.30-1
-- Update to upstream 0.1.30
+* Tue Oct 20 2014 James Slagle <jslagle@redhat.com> 0.1.32-1
+- Update to upstream 0.1.32
 
 * Tue Oct 28 2014 James Slagle <jslagle@redhat.com> 0.1.23-1
 - Update to upstream 0.1.23
