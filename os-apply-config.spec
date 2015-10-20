@@ -1,6 +1,6 @@
 Name:		os-apply-config
 Version:	0.1.32
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
@@ -12,6 +12,7 @@ BuildRequires:	python2-devel
 BuildRequires:	python-setuptools
 BuildRequires:	python-pbr
 
+Requires:	python-pbr
 Requires:	python-setuptools
 Requires:	python-argparse
 Requires:	python-anyjson
@@ -43,6 +44,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python2_sitelib}/os_apply_config*
 
 %changelog
+* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.32-3
+- Add Requires: python-pbr
+
 * Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.32-2
 - Remove 0001-Remove-pbr-runtime-dependency-and-replace-with-build.patch
 
