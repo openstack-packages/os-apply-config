@@ -1,13 +1,11 @@
 Name:		os-apply-config
 Version:	0.1.32
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Configure files from cloud metadata
 
 License:	ASL 2.0
 URL:		http://pypi.python.org/pypi/%{name}
 Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
-
-Patch0001: 0001-Remove-pbr-runtime-dependency-and-replace-with-build.patch
 
 BuildArch:	noarch
 BuildRequires:	python2-devel
@@ -25,8 +23,6 @@ Tool to apply openstack heat metadata to files on the system.
 %prep
 
 %setup -q -n %{name}-%{version}
-
-%patch0001 -p1
 
 sed -i '/setuptools_git/d' setup.py
 sed -i s/REDHATOSAPPLYCONFIGVERSION/%{version}/ os_apply_config/version.py
@@ -47,6 +43,9 @@ sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
 %{python2_sitelib}/os_apply_config*
 
 %changelog
+* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.32-2
+- Remove 0001-Remove-pbr-runtime-dependency-and-replace-with-build.patch
+
 * Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.32-1
 - Update to upstream 0.1.32
 
