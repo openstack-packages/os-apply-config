@@ -18,6 +18,7 @@ Requires:	python-setuptools
 Requires:	python-argparse
 Requires:	python-anyjson
 Requires:	pystache
+Requires:   python-six
 
 %description
 Tool to apply openstack heat metadata to files on the system.
