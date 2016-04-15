@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_8b5800fc",
+        "filename": "os-apply-config.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1003853
+      },
+      "writtenOn": "2016-04-15T10:42:23Z",
+      "side": 1,
+      "message": "python-six is 2 lines above this.  we should either remove the constraint if it\u0027s not appropriate or update it.",
+      "revId": "e239afadc9e7359af0a6dc6ab190d504c4951355",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
