@@ -1,0 +1,7 @@
+Verified+1: rdo-ci-jenkins <whayutin+rdocijenkins@redhat.com>
+Code-Review+2: Alan Pevec <alan.pevec@redhat.com>
+Submitted-by: Alan Pevec <alan.pevec@redhat.com>
+Submitted-at: Fri, 15 Apr 2016 08:07:53 -0400
+Reviewed-on: https://review.gerrithub.io/273060
+Project: openstack-packages/os-apply-config
+Branch: refs/heads/rpm-master
