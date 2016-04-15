@@ -18,6 +18,7 @@ Requires:	python-anyjson
 Requires:	pystache
 Requires:       python-six >= 1.9.0
 Requires:       python-pbr
+Requires:       python-six
 
 %description
 Tool to apply openstack heat metadata to files on the system.
