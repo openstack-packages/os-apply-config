@@ -1,3 +1,5 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:		os-apply-config
 Version:	0.1.32
 Release:	4%{?dist}
@@ -17,17 +19,13 @@ Requires:	python-setuptools
 Requires:	python-argparse
 Requires:	python-anyjson
 Requires:	pystache
+Requires:	python-six >= 1.9.0
 
 %description
 Tool to apply openstack heat metadata to files on the system.
 
 %prep
-
-%setup -q -n %{name}-%{version}
-
-sed -i '/setuptools_git/d' setup.py
-sed -i s/REDHATOSAPPLYCONFIGVERSION/%{version}/ os_apply_config/version.py
-sed -i s/REDHATOSAPPLYCONFIGRELEASE/%{release}/ os_apply_config/version.py
+%setup -q -n %{name}-%{upstream_version}
 
 
 %build
